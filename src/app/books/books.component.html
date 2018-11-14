@@ -1,0 +1,60 @@
+<h1>
+  Welcome to {{ title }}!
+</h1>
+<table class="bordered" id="books">
+    <tbody>
+  <tr class="const">
+      <th>Номер</th>
+      <th>Назва книги</th>
+      <th>Автор</th>
+      <th>Жанр</th>
+      <th>Рік видання</th>
+      <th>Редагувати</th>
+      <th>Видалити</th>
+</tr>
+<tr *ngFor="let book of booksItems">
+    <ng-template [ngTemplateOutlet]="loadTemplate(book)"
+                [ngTemplateOutletContext]="{ $implicit: book}">
+    </ng-template>
+</tr>
+</tbody>
+</table>
+<button (click)="addBook()" class="add">Добавити</button>
+<div>{{statusMessage}}</div>
+<ng-template #readOnlyTemplate let-book>
+    <td>{{book.number}}</td>
+    <td>{{book.bookName}}</td>
+    <td><a routerLink="/authors" routerLinkActive="active">{{authors(book)}} <!--{{book.lastName}}--></a></td>
+    <td>{{book.genre}}</td>
+    <td>{{book.year}}</td>
+    <td class="tdforbuttons">
+        <input type="button" value="..." class="editButton" (click)="editBook(book)" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="-" (click)="deleteBook(book)" class="del" />
+    </td>
+</ng-template>
+<!--шаблон для редактирования-->
+<ng-template #editTemplate>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.number" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.bookName"  />
+    </td>
+    <td>
+        <a routerLink="/authors" routerLinkActive="active"><input type="text" [(ngModel)]="editedBook.firstName"  /></a>
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.genre" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.year" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="Зберегти" (click)="saveBook()" class="save" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="Відмінити" (click)="cancel()"  class="cancel"/>
+    </td>
+</ng-template>

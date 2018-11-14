@@ -1,0 +1,30 @@
+{
+    "list":
+    [{
+    "id":"1",
+    "bookName":"firstBook",
+    "firstName":"Імя автора",
+    "lastName":"Прізвище",
+    "year":"1993",
+    "number":"0001",
+    "genre":"gedgnre"
+    },
+    {
+    "id":"2",
+    "bookName":"secondBook",
+    "firstName":"Імя автора",
+     "lastName":"Прізвище",
+     "year":"1993",
+     "number":"0001",
+     "genre":"gefxgnre"
+    },
+    {
+    "id":"3",
+    "bookName":"firstBook",
+    "firstName":"Імя автора2",
+    "lastName":"Прізвище2",
+    "year":"1993",
+    "number":"0001",
+    "genre":"genvxchre"
+    }]
+}

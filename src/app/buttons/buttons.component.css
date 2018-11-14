@@ -1,0 +1,125 @@
+.add{
+
+color: #fff; /* цвет текста */
+ text-decoration: none; /* убирать подчёркивание у ссылок */
+ user-select: none; /* убирать выделение текста */
+ background: rgb(212,75,56); /* фон кнопки */
+ padding: .7em 1.5em; /* отступ от текста */
+ outline: none; /* убирать контур в Mozilla */
+}
+.add:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+.add:active { background: rgb(152,15,0); }
+.editButton{
+
+    background-color:#7892c2;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:14px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.editButton:hover {
+	background-color:#476e9e;
+}
+.editButton:active {
+	position:relative;
+	top:1px;
+}
+.del{
+    background-color:#d41515;
+	border:1px solid #ed0e19;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:14px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #8f3f3f;
+}
+.del:hover {
+	background-color:#fa0000;
+}
+.del:active {
+	position:relative;
+	top:1px;
+}
+.save{
+    background-color:#44c767;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:14px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.save:hover {
+	background-color:#5cbf2a;
+}
+.save:active {
+	position:relative;
+	top:1px;
+}
+.cancel{
+    background-color:#b7cf02;
+	border:1px solid #e0ce0d;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:14px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.cancel:hover {
+	background-color:#dece18;
+}
+.cancel:active {
+	position:relative;
+	top:1px;
+}
+.tdforbuttons{
+    width:100px;
+    height:50px;
+}
+.bordered {
+  width: 100%;
+  border: solid #ccc 1px;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px #ccc;
+}
+.bordered input{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+}
+.bordered a,
+.bordered p,{
+    width: 100%;
+    height: 50px;
+    padding: 10px; /* Поля вокруг текста */
+   margin: 10px;
+}
+.bordered td,
+.bordered th {
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  text-align: left;
+  height: 50px;
+}
+
+.bordered tr:hover {
+  background: #fbf8e9;
+  transition: all 0.1s ease-in-out;
+}
+h1{
+    text-align: center;
+}

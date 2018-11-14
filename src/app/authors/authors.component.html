@@ -1,0 +1,80 @@
+<!-- <h1>
+  Welcome to {{ title }}!
+</h1>
+<table class="bordered" id="authors">
+    <tbody>
+  <tr class="const">
+      <th>Ім'я</th>
+      <th>Прізвище</th>
+      <th>Номер</th>
+      <th>Перелік книг</th>
+</tr> -->
+<!-- <tr  *ngFor="let authorItem of booksItems">
+  <td><a>{{authorItem?.firstName}}</a></td>  -->
+  <!-- <td><a>{{sort(authorItem,booksItems)}}</a></td> -->
+  <!-- <td><a>{{authorItem?.lastName}}</a></td>
+  <td><a>{{authorItem?.number}}</a></td>
+   <td><a routerLink="/books" routerLinkActive="active" *ngFor="let bookItem of booksItems">{{filterItem(authorItem,bookItem)}}</a></td>
+</tr> -->
+  <!-- </tbody>
+</table> -->
+<!-- <input type="text" [(ngModel)]="name">
+<input type="text" name="" value="">
+ -->
+ <h1>
+   Welcome to {{ title }}!
+ </h1>
+ <table class="bordered">
+     <tr class="const">
+         <th>Ім'я</th>
+         <th>Прізвище</th>
+         <th>Номер</th>
+         <th>Перелік книг</th>
+          <th>Редагувати</th>
+          <th>Видалити</th>
+   </tr>
+   <tbody>
+        <tr *ngFor="let book of booksItems">
+            <ng-template [ngTemplateOutlet]="loadTemplate(book)"
+                        [ngTemplateOutletContext]="{ $implicit: book}">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<div>{{statusMessage}}</div>
+ <button (click)="addBook()" class="add">Добавити</button>
+<!--шаблон для чтения-->
+<ng-template #readOnlyTemplate let-book>
+    <td>{{book.firstName}}</td>
+    <td>{{book.lastName}}</td>
+    <td>{{book.number}}</td>
+    <td><a routerLink="/books" routerLinkActive="active">{{sortbooks(book)}}</a></td>
+    <td class="tdforbuttons">
+        <input type="button" value="..." class="editButton" (click)="editBook(book)" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="-" (click)="deleteBook(book)" class="del" />
+    </td>
+</ng-template>
+<!--шаблон для редактирования-->
+<ng-template #editTemplate>
+
+    <td>
+        <input type="text" [(ngModel)]="editedBook.firstName" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.lastName" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.number" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedBook.bookName" class="form-control" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="Зберегти" (click)="saveBook()" class="btn btn-success" class="save" />
+    </td>
+    <td class="tdforbuttons">
+        <input type="button" value="Відмінити" (click)="cancel()" class="cancel" />
+    </td>
+</ng-template>
